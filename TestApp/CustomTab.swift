@@ -1,20 +1,41 @@
-//
-//  CustomTab.swift
-//  TestApp
-//
-//  Created by Aayushi Tailor on 13/02/2024.
-//
 
 import SwiftUI
 
 struct CustomTab: View {
+    let text: String
+    @Binding var isSelected: Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(text)
+                   .fontWeight(isSelected ? .heavy : .regular)
+                   .font(.custom("SF Pro Display", size: 12))
+                   .padding(.bottom, 10)
+                   .foregroundColor(isSelected ? Color.black : Color(red: 0.557, green: 0.557, blue: 0.557))
     }
 }
 
-struct CustomTab_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomTab()
+
+struct CustomTopTabBar: View {
+    @Binding var tabIndex: Int
+    
+    var body: some View {
+        HStack {
+            Spacer()
+            CustomTab(text: "2023年10月", isSelected: .constant(tabIndex == 0))
+                .onTapGesture { onButtonTapped(index: 0) }.frame(maxWidth: .infinity)
+
+            CustomTab(text: "2023年11月", isSelected: .constant(tabIndex == 1))
+                .onTapGesture { onButtonTapped(index: 1) }.frame(maxWidth: .infinity)
+
+            CustomTab(text: "2023年12月", isSelected: .constant(tabIndex == 2))
+                .onTapGesture { onButtonTapped(index: 2) }.frame(maxWidth: .infinity)
+
+            Spacer()
+        }
+    }
+    
+    private func onButtonTapped(index: Int) {
+        withAnimation { tabIndex = index }
     }
 }
+

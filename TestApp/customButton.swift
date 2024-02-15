@@ -1,20 +1,22 @@
-//
-//  customButton.swift
-//  TestApp
-//
-//  Created by Aayushi Tailor on 14/02/2024.
-//
 
 import SwiftUI
 
-struct customButton: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct CustomButton: View{
+    let text: String
+    
+    var body: some View{
+        Text(text)
+            .frame(width: text == "10%" ? UIScreen.screenWidth * 10 / 100 :  text == "50%" ? UIScreen.screenWidth * 46 / 100 : UIScreen.screenWidth * 36 / 100, height: 50)
+              .foregroundColor(text == "10%" ? customBlue: text == "50%" ? customPurple: customOrg )
+              .fontWeight(.semibold)
+              .background(text == "10%" ? lightBlue: text == "50%" ? lightPurple : lightOrg )
+              .border(width: 1, edges: text == "10%" ? [.top, .leading, .bottom, .trailing] : [.top, .bottom, .trailing], color: text == "10%" ? customBlue : text == "50%" ? customPurple : customOrg)
+
     }
 }
 
-struct customButton_Previews: PreviewProvider {
-    static var previews: some View {
-        customButton()
-    }
+extension UIScreen{
+   static let screenWidth = UIScreen.main.bounds.size.width
+   static let screenHeight = UIScreen.main.bounds.size.height
+   static let screenSize = UIScreen.main.bounds.size
 }
