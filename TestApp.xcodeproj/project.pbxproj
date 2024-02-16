@@ -7,30 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E40686662B7FED15008B2575 /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40686652B7FED14008B2575 /* BottomButtonView.swift */; };
 		E46216662B7BEFFF005EF02E /* TestAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46216652B7BEFFF005EF02E /* TestAppApp.swift */; };
 		E46216682B7BEFFF005EF02E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46216672B7BEFFF005EF02E /* ContentView.swift */; };
 		E462166A2B7BF001005EF02E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46216692B7BF001005EF02E /* Assets.xcassets */; };
 		E462166D2B7BF001005EF02E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E462166C2B7BF001005EF02E /* Preview Assets.xcassets */; };
-		E4CE44CD2B7C03E200BED8BA /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE44CC2B7C03E200BED8BA /* CustomLabel.swift */; };
 		E4CE44CF2B7C16EE00BED8BA /* CustomTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE44CE2B7C16EE00BED8BA /* CustomTab.swift */; };
 		E4CE44D12B7CC69A00BED8BA /* customColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE44D02B7CC69A00BED8BA /* customColors.swift */; };
 		E4CE44D32B7CCCBB00BED8BA /* customBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE44D22B7CCCBB00BED8BA /* customBorder.swift */; };
 		E4CE44D52B7D457600BED8BA /* selectedMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE44D42B7D457600BED8BA /* selectedMonthView.swift */; };
-		E4CE44D72B7D45DD00BED8BA /* customButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE44D62B7D45DD00BED8BA /* customButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E40686652B7FED14008B2575 /* BottomButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
 		E46216622B7BEFFF005EF02E /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46216652B7BEFFF005EF02E /* TestAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppApp.swift; sourceTree = "<group>"; };
 		E46216672B7BEFFF005EF02E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E46216692B7BF001005EF02E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E462166C2B7BF001005EF02E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E4CE44CC2B7C03E200BED8BA /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		E4CE44CE2B7C16EE00BED8BA /* CustomTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTab.swift; sourceTree = "<group>"; };
 		E4CE44D02B7CC69A00BED8BA /* customColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customColors.swift; sourceTree = "<group>"; };
 		E4CE44D22B7CCCBB00BED8BA /* customBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customBorder.swift; sourceTree = "<group>"; };
 		E4CE44D42B7D457600BED8BA /* selectedMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectedMonthView.swift; sourceTree = "<group>"; };
-		E4CE44D62B7D45DD00BED8BA /* customButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,11 +61,10 @@
 		E46216642B7BEFFF005EF02E /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
-				E4CE44CC2B7C03E200BED8BA /* CustomLabel.swift */,
 				E46216652B7BEFFF005EF02E /* TestAppApp.swift */,
-				E4CE44D62B7D45DD00BED8BA /* customButton.swift */,
 				E46216672B7BEFFF005EF02E /* ContentView.swift */,
 				E4CE44CE2B7C16EE00BED8BA /* CustomTab.swift */,
+				E40686652B7FED14008B2575 /* BottomButtonView.swift */,
 				E4CE44D02B7CC69A00BED8BA /* customColors.swift */,
 				E4CE44D22B7CCCBB00BED8BA /* customBorder.swift */,
 				E4CE44D42B7D457600BED8BA /* selectedMonthView.swift */,
@@ -156,10 +153,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4CE44CF2B7C16EE00BED8BA /* CustomTab.swift in Sources */,
+				E40686662B7FED15008B2575 /* BottomButtonView.swift in Sources */,
 				E46216682B7BEFFF005EF02E /* ContentView.swift in Sources */,
 				E4CE44D12B7CC69A00BED8BA /* customColors.swift in Sources */,
-				E4CE44CD2B7C03E200BED8BA /* CustomLabel.swift in Sources */,
-				E4CE44D72B7D45DD00BED8BA /* customButton.swift in Sources */,
 				E4CE44D52B7D457600BED8BA /* selectedMonthView.swift in Sources */,
 				E4CE44D32B7CCCBB00BED8BA /* customBorder.swift in Sources */,
 				E46216662B7BEFFF005EF02E /* TestAppApp.swift in Sources */,

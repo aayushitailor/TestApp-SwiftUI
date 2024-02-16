@@ -20,7 +20,6 @@ struct CustomTopTabBar: View {
     
     var body: some View {
         HStack {
-            Spacer()
             CustomTab(text: "2023年10月", isSelected: .constant(tabIndex == 0))
                 .onTapGesture { onButtonTapped(index: 0) }.frame(maxWidth: .infinity)
 
@@ -29,8 +28,6 @@ struct CustomTopTabBar: View {
 
             CustomTab(text: "2023年12月", isSelected: .constant(tabIndex == 2))
                 .onTapGesture { onButtonTapped(index: 2) }.frame(maxWidth: .infinity)
-
-            Spacer()
         }
     }
     

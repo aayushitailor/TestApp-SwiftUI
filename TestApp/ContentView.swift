@@ -9,7 +9,11 @@ struct ContentView: View {
             VStack {
                 VStack(alignment: .leading, spacing: 0.0) {
                     VStack {
-                        CustomLabel(text: "可処分所得の可視化")
+                        Text("可処分所得の可視化")
+                          .foregroundColor(.black)
+                          .font(.system(size: 20.0, weight: .bold))
+                          .padding(.horizontal, 20)
+                          .padding(.vertical, 15)
                     }
                     VStack(alignment: .leading) {
                         CustomTopTabBar(tabIndex: $tabIndex)
@@ -22,9 +26,9 @@ struct ContentView: View {
                         else {
                             SelectedMonthView(index: 2, lblmonth: "2023年12月")
                         }
-                        
                     }
-                    .padding(.top, 10)
+                    .padding(.top, 20)
+                    .padding(.bottom, 20)
                     .background(Color.white)
                 }
                 bottomView()
@@ -39,6 +43,52 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct BottomButtonTab1: View {
+    let text: String
+    @Binding var isSelected: Bool
+    let icon: String
+        
+    var body: some View {
+        VStack{
+            Image(icon)
+            Text(text)
+                .foregroundColor(isSelected ? darkPurple : Color.init(red: 165.0/255.0, green: 165.0/255.0, blue: 165.0/255.0))
+                .fontWeight(.bold)
+                .font(.custom("SF Pro Display", size: 14))
+        }
+        .padding(12)
+        .background(isSelected ? lightPurple: .white)
+        .cornerRadius(10)
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(isSelected ? darkPurple : .gray, lineWidth: 1)
+        )
+        
+    }
+}
+
+
+struct BottomButtonTabBar1: View {
+    @Binding var tabIndex: Int
+
+    var body: some View {
+        HStack {
+            BottomButtonTab1(text: "必要不可欠", isSelected: .constant(tabIndex == 0), icon: "grayhexagon" )
+                .onTapGesture { onButtonTapped(index: 0) }.frame(maxWidth: .infinity)
+
+            BottomButtonTab1(text: "置を換え可能", isSelected: .constant(tabIndex == 1), icon: "grayminimize" )
+                .onTapGesture { onButtonTapped(index: 1) }.frame(maxWidth: .infinity)
+
+            BottomButtonTab1(text: "趣味自由用途", isSelected: .constant(tabIndex == 2), icon: "graywheel" )
+                .onTapGesture { onButtonTapped(index: 2) }.frame(maxWidth: .infinity)
+        }
+    }
+    
+    private func onButtonTapped(index: Int) {
+        withAnimation { tabIndex = index }
     }
 }
 
@@ -66,38 +116,28 @@ struct btmNestedView: View {
 }
 
 struct bottomView: View {
+    @State private var selectedSegment = 0
+    @State var btntabIndex = 0
+    @State var icon = ""
+    @State var btntabIndex1 = 0
     var body: some View {
         VStack {
-            HStack(spacing: 10){
-                btmNestedView(iconName: "grayhexagon", title: "必要不可欠")
-                btmNestedView(iconName: "grayminimize", title: "置を換え可能")
-                btmNestedView(iconName: "graywheel", title: "趣味自由用途")
+            VStack {
+                BottomButtonTabBar1(tabIndex: $btntabIndex1)
             }
         }
         .padding(10)
         
-        VStack{
-            HStack(spacing: 25){
-                Text("必要不可欠")
-                    .foregroundColor(customdarkgrey)
-                    .font(.system(size: 14))
-
-                Text("置を換え可能")
-                    .foregroundColor(customdarkgrey)
-                    .font(.system(size: 14))
-
-                Text("趣味自由用途")
-                    .foregroundColor(.black)
-                    .font(.system(size: 14))
-                    .padding(10)
-                    .background(Color.init(red: 243.0/255.0, green: 243.0/255.0, blue: 243.0/255.0))
-                    .cornerRadius(20)
+        VStack {
+            VStack {
+                BottomButtonTabBar(tabIndex: $btntabIndex, icon: $icon)
             }
-            .padding(10)
+            .padding(.vertical, 6)
             .background(.white)
-            .cornerRadius(25)
+            .cornerRadius(30)
         }
-        .padding(.bottom, 20)
+        .padding(.horizontal, 10)
+        .padding(.vertical, 20)
         
         HStack {
                 Image("icon")
@@ -111,8 +151,9 @@ struct bottomView: View {
                             .stroke(.white, lineWidth: 1)
                     )
         }
-        .padding(10)
-        .background(customBlue)
+        .padding(.horizontal, 10)
+        .padding(.vertical, 20)
+        .background(darkBlue)
         .cornerRadius(10)
             
     }
