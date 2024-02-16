@@ -38,12 +38,13 @@ struct SelectedMonthView: View{
                     HStack {
                         Image("hexagon")
                         Text("必要不可欠")
+                            .font(.system(size: 12.0, weight: .bold))
+
                     }
                     .foregroundColor(darkBlue)
                     .font(.system(size: 16, weight: .bold))
-                    .padding(.horizontal, 5)
                     .padding()
-                    .frame(maxHeight: 40)
+                    .frame(maxHeight: 35)
                     .background(lightBlue)
                     .cornerRadius(30)
                 }
